@@ -17,6 +17,9 @@ RUN \
   ncurses-dev \
   file \
   wget \
+  git \
+  rsync \
+  m4 \
   && \
   wget -q http://ftp.ipv6.uni-leipzig.de/pub/ftp.netbsd.org/pub/pkgsrc/current/pkgsrc.tgz && \
   tar -xzf pkgsrc.tgz -C /usr && \
