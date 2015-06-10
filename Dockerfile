@@ -24,8 +24,8 @@ ENV \
   PKG_DEFAULT_OPTIONS="-gssapi"
 
 RUN \
-  wget -q http://ftp.ipv6.uni-leipzig.de/pub/ftp.netbsd.org/pub/pkgsrc/current/pkgsrc.tgz && \
-  tar -xzf pkgsrc.tgz -C /usr && \
+  cd /usr && \
+  git clone https://github.com/jsonn/pkgsrc.git && \
   cd /usr/pkgsrc/bootstrap && ./bootstrap
 
 COPY mk.conf /usr/pkg/etc/
