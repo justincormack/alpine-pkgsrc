@@ -3,7 +3,10 @@ FROM alpine:latest
 
 MAINTAINER Justin Cormack
 
-env PATH=/usr/pkg/bin:$PATH NOGCCERROR=yes
+env \
+  PATH=/usr/pkg/bin:$PATH \
+  NOGCCERROR=yes \
+  PKG_DEFAULT_OPTIONS="-gssapi"
 
 RUN \
   apk update && \
