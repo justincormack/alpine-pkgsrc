@@ -1,12 +1,6 @@
-
 FROM alpine:latest
 
-MAINTAINER Justin Cormack
-
-env \
-  PATH=/usr/pkg/bin:$PATH \
-  NOGCCERROR=yes \
-  PKG_DEFAULT_OPTIONS="-gssapi"
+MAINTAINER Justin Cormack <justin@specialbusservice.com>
 
 RUN \
   apk update && \
@@ -23,6 +17,11 @@ RUN \
   git \
   rsync \
   m4
+
+ENV \
+  PATH=/usr/pkg/bin:$PATH \
+  NOGCCERROR=yes \
+  PKG_DEFAULT_OPTIONS="-gssapi"
 
 RUN \
   wget -q http://ftp.ipv6.uni-leipzig.de/pub/ftp.netbsd.org/pub/pkgsrc/current/pkgsrc.tgz && \
