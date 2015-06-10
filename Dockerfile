@@ -25,7 +25,8 @@ RUN \
 ENV \
   PATH=/usr/pkg/bin:$PATH \
   NOGCCERROR=yes \
-  PKG_DEFAULT_OPTIONS="-gssapi"
+  PKG_DEFAULT_OPTIONS="-gssapi" \
+  LIBABISUFFIX=""
 
 RUN \
   cd /usr/pkgsrc/bootstrap && ./bootstrap
