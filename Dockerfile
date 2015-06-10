@@ -3,7 +3,7 @@ FROM alpine:latest
 
 MAINTAINER Justin Cormack
 
-env PATH=/usr/pkg/bin:$PATH
+env PATH=/usr/pkg/bin:$PATH NOGCCERROR=yes
 
 RUN \
   apk update && \
@@ -19,10 +19,11 @@ RUN \
   wget \
   git \
   rsync \
-  m4 \
-  && \
+  m4
+
+RUN \
   wget -q http://ftp.ipv6.uni-leipzig.de/pub/ftp.netbsd.org/pub/pkgsrc/current/pkgsrc.tgz && \
   tar -xzf pkgsrc.tgz -C /usr && \
-  cd /usr/pkgsrc/bootstrap && CFLAGS="-Wno-deprecated-declarations -fno-builtin" ./bootstrap
+  cd /usr/pkgsrc/bootstrap && ./bootstrap
 
 COPY mk.conf /usr/pkg/etc/
