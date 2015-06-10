@@ -18,14 +18,16 @@ RUN \
   rsync \
   m4
 
+RUN \
+  cd /usr && \
+  git clone https://github.com/jsonn/pkgsrc.git 
+
 ENV \
   PATH=/usr/pkg/bin:$PATH \
   NOGCCERROR=yes \
   PKG_DEFAULT_OPTIONS="-gssapi"
 
 RUN \
-  cd /usr && \
-  git clone https://github.com/jsonn/pkgsrc.git && \
   cd /usr/pkgsrc/bootstrap && ./bootstrap
 
 COPY mk.conf /usr/pkg/etc/
