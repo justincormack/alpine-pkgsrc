@@ -8,6 +8,9 @@ RUN \
   apk add \
   build-base \
   gawk \
+  tar \
+  grep \
+  gzip \
   sed \
   zlib-dev \
   openssl-dev \
