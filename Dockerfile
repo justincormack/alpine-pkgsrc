@@ -11,6 +11,7 @@ RUN \
   tar \
   grep \
   gzip \
+  bzip2 \
   sed \
   zlib-dev \
   openssl-dev \
