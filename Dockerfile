@@ -20,7 +20,10 @@ RUN \
   wget \
   git \
   rsync \
-  m4
+  m4 \
+  bash \
+  gmp-dev \
+  linux-headers
 
 RUN \
   cd /usr && \
